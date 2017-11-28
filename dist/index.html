@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><title>mp</title><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><script>// 750 -> 1rem = 50px   大于750 -> 1rem = 100px
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=750){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);</script><link href=/static/css/app.3c581e0fdf0ad133c309eb92c89ee199.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.0b08cb754715aa22e85f.js></script><script type=text/javascript src=/static/js/vendor.25470f4f5e81c3209e52.js></script><script type=text/javascript src=/static/js/app.eb7fb5aad210b5d06f21.js></script></body></html>
